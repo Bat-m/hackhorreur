@@ -2,7 +2,7 @@ import React from "react";
 import Character from "./Character";
 import Axios from "axios";
 import'./HomeCharacter.css'
-import bandeau from './../../assets/bandeau.jpg'
+
 
 export default class HomeCharacter extends React.Component {
   constructor(props) {

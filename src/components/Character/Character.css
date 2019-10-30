@@ -4,6 +4,7 @@
     border: 1px solid #ffe300;
     border-radius:2%;
     font-size: 2.5vh;
+    height:100vh;
   }
 
   .characters-card-id{
@@ -12,8 +13,8 @@
   }
  
   .characters-card >img{
-    width: 35%;
-    height: auto;
+    width: 26vh;
+    height: 26vh;
     padding-top: 5vh;
   }
   
