@@ -1,0 +1,21 @@
+.HomeCharacters-card{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+	
+	
+  }
+.HomeCharacters{
+  font-family: "IM Fell DW Pica";
+  color : white;
+}
+.HomeCharacters-storie{
+	font-size:2em;
+}
+
+.HomeCharacters-title{
+	font-size: 3em;
+}
