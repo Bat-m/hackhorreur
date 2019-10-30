@@ -1,0 +1,27 @@
+.home{
+    background-image: url("./../assets/spaceBackground.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size : cover;
+    margin :0;
+    Padding : 0;
+}
+ 
+
+.home-title-and-button{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: space-around;
+    margin: auto;
+    height: 50vh;
+    }
+
+h1{
+    font-family: "IM Fell DW Pica";
+    color : white;
+    
+}
+
