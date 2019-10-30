@@ -11,10 +11,9 @@ import Stories from './components/Stories/Stories';
 function App() {
   return (
     <div className="App">
-      {/* <GetPost/> */}
-      <Home/>
+   
       <Switch>
-        {/* <Route exact path="/" component={Home}/> */}
+        <Route exact path="/" component={Home}/>
         <Route path="/charac" component={Charac}/>
         <Route path="/stories" component={Stories}/>
           
