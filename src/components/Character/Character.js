@@ -1,5 +1,6 @@
 import React from "react";
 import './Character.css';
+import Axios from "axios";
 import {Link} from 'react-router-dom';
 
 export default class Character extends React.Component {
@@ -8,23 +9,21 @@ export default class Character extends React.Component {
     
     this.state = {
       heroesAll: [],
-      
+      temp:[]
     };
     
   }
 
-  onChange = event => {
-    const test=this.props.heroes
-    localStorage.setItem('myValueInLocalStorage', JSON.stringify(test));
-  };
 
-  onButton = () => {
-    localStorage.clear();
-  };
+    onChange = () => {
+      
+      Axios.put(`${process.env.REACT_APP_RICHARD_IP}/characters/selectHero/${this.props.heroes.id}`,{"isHero" :1} )
+    }
+
 
   render(){
     
-    // console.log(this.props.heroes)
+
     return (
       <div className="Characters">
         <div className="characters-card">
@@ -41,9 +40,11 @@ export default class Character extends React.Component {
           <p className="characters-card-id">Origine : {this.props.heroes.origin}</p>
           </div>
           {/* <button onClick={this.onButton}>Reset localstorage</button> */}
-          {/* <button onClick={this.onChange}>test localStorage</button> */}
+          {/* <button onClick={this.onChange}>test put</button> */}
+
           <br></br>
           <Link to='/stories' onClick={this.onChange} className="character-btn-play">Jouer avec {this.props.heroes.name}</Link>
+
 
         </div>
       </div>

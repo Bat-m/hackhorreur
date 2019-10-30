@@ -1,40 +1,42 @@
 import React from 'react';
 import Axios from 'axios';
+import {Link} from 'react-router-dom';
 
 export default class Stories extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          heroesAll: []
+          hero: []
         };
       }
 
+    
       componentDidMount() {
-        Axios.get("")
+        Axios.get(process.env.REACT_APP_RICHARD_IP + "/characters/hero")
           .then(response => response.data)
-          .then(data =>
-            this.setState({
-            //   heroesAll: data
-            })
+          .then(data =>  this.setState({
+            hero: data})
           );
       }
 
       onChange = event => {
         // const [value, setValue] = React.useState('');
-        
-        localStorage.getItem('myValueInLocalStorage')
-        console.log(localStorage.getItem('myValueInLocalStorage'))
+        // localStorage.getItem('myValueInLocalStorage')
+        // console.log(localStorage.getItem('myValueInLocalStorage'))
       };
 
     render(){
-       let heroes=localStorage.getItem('myValueInLocalStorage')
-       console.log(heroes.name)
-        // console.log(this.props.match.params)
+    //    let myJson=localStorage.getItem('myValueInLocalStorage')
+       
+    //   let heroes = JSON.parse(myJson);
+    //    console.log(heroes.name)
         return(
             <div className="Home">
-                <div>Hello {heroes.name}</div>
-                <button onClick={this.onChange}>test localStorage</button>
 
+                <div>Hello  </div>
+                <button onClick={this.onChange}>test localStorage</button>
+                <Link to='/fight'  className="">Choix 1</Link>   
+                <Link to='/stories'  className="">Choix 2</Link> 
             </div>
         )
 
