@@ -12,36 +12,36 @@ export default class PersonList extends React.Component {
 
   componentDidMount() {
     
-    Axios.get("http://192.168.1.72:8000/item/all")
+    Axios.get("http://192.168.1.145:8000/characters/everyone")
       .then(response => response.data)
       .then(data =>console.log(data))
       } ;
   
-      handleChange = event => {
-        this.setState({ name: event.target.value });
-      }
+      // handleChange = event => {
+      //   this.setState({ name: event.target.value });
+      // }
 
-      handleSubmit = event => {
-        event.preventDefault();
-        const user = [{id:8,title:'ohyeah'}];
-        Axios.post('http://192.168.1.72:8000/item/add',JSON.stringify({id:9,title:'again'}))
-      .then(function (response) {
-          console.log(response);
-      }).catch(function (error) {
-          console.log(error);
-      });
-    }
+      // handleSubmit = event => {
+      //   event.preventDefault();
+      //   const user = [{id:8,title:'ohyeah'}];
+      //   Axios.post('http://192.168.1.72:8000/item/add',JSON.stringify({id:9,title:'again'}))
+      // .then(function (response) {
+      //     console.log(response);
+      // }).catch(function (error) {
+      //     console.log(error);
+      // });
+    //}
     
       render() {
         return (
           <div>
-            <form onSubmit={this.handleSubmit}>
+            {/* <form onSubmit={this.handleSubmit}>
               <label>
                 Person Name:
                 <input type="text" name="name" onChange={this.handleChange} />
               </label>
               <button type="submit">Add</button>
-            </form>
+            </form> */}
           </div>
         )
       }
