@@ -1,0 +1,36 @@
+
+.characters-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    /* background-color:beige; */
+    height: auto;
+    border: 1px solid #ffe300;
+    border-radius:2%;
+    background-color: black;
+    color:white;
+  }
+
+ 
+  .characters-card >img{
+    width: 50%;
+    height: auto
+  }
+  
+  .characters-card:hover {
+    box-shadow: 0 15px 17px 0 rgb(36, 32, 32);
+  }
+  
+  .characters-contain {
+    /* padding: 2px 16px; */
+    color: #ffe300;
+  }
+
+  .handle{
+    width: 30%;
+    margin: 25px;
+  }
+
+  .myText{
+    background-color: #0a1a1a;
+  }
