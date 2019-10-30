@@ -13,17 +13,25 @@
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    align-items: center;
-    align-content: space-around;
+    align-content: space-between;
     margin: auto;
-    height: 50vh;
+    height: 70vh;
     }
 
-h1{
+.home-st-grool-title{
     font-family: "IM Fell DW Pica";
     color : white;
     font-size: 10vh;
 }
 .home-play-button{
-    background-color: green;
+    font-family: "IM Fell DW Pica";
+    font-size : 10vh;
+    color : white;
+    text-decoration: none;
+}
+
+.home-st-grool{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15vh;
 }

@@ -33,16 +33,17 @@ export default class Character extends React.Component {
             <h3>
               <b>{this.props.heroes.name}</b>
             </h3>
-            <p>PV: {this.props.heroes.HP}</p>
-            <p>Vitesse: {this.props.heroes.agility}</p>
-            <p>Attaque: {this.props.heroes.atk}</p>
-            <p>Defense: {this.props.heroes.def}</p>
-            <p>Description: {this.props.heroes.description}</p>
-            <p>Origine: {this.props.heroes.origin}</p>
+          <p className="characters-card-id">PV : {this.props.heroes.HP}</p>
+          <p className="characters-card-id">Vitesse : {this.props.heroes.agility}</p>
+          <p className="characters-card-id">Attaque : {this.props.heroes.atk}</p>
+          <p className="characters-card-id">Defense : {this.props.heroes.def}</p>
+          <p className="characters-card-id">Description : {this.props.heroes.description}</p>
+          <p className="characters-card-id">Origine : {this.props.heroes.origin}</p>
           </div>
           <button onClick={this.onButton}>Reset localstorage</button>
           {/* <button onClick={this.onChange}>test localStorage</button> */}
           <Link to='/stories' onClick={this.onChange} className="">Je veux toi</Link>
+
         </div>
       </div>
     );
