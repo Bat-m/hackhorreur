@@ -30,10 +30,10 @@ export default class HomeCharacter extends React.Component {
  
     return (
       <div className="HomeCharacters">
-        <h1>Quel horror héros seras-tu ?</h1>
+        <h1 className="HomeCharacters-title">Quel horror héros seras-tu ?</h1>
        
 
-        <p>Ta planète a été percutée par un astéroïde et tu t'es <i>légèrement</i> transformé(e). 
+        <p className="HomeCharacters-storie">Ta planète a été percutée par un astéroïde et tu t'es <i>légèrement</i> transformé(e). 
           Tu as réussi à monter dans une capsule partant vers un autre monde ... Tu attéris sur une nouvelle planète mais tu ne sais pas si elle est habitée!</p>
 
         <div className="HomeCharacters-card">
