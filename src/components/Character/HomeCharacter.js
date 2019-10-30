@@ -1,17 +1,21 @@
 import React from "react";
 import Character from "./Character";
 import Axios from "axios";
+
 import'./HomeCharacter.css'
 
 
 export default class HomeCharacter extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
-      heroesAll: []
+      heroesAll: [],
+      
     };
+    
   }
-
+  
   componentDidMount() {
     Axios.get(process.env.REACT_APP_RICHARD_IP + "/characters/everyone")
       .then(response => response.data)
@@ -23,7 +27,7 @@ export default class HomeCharacter extends React.Component {
   }
 
   render() {
-    console.log(this.state.heroesAll[0]);
+ 
     return (
       <div className="HomeCharacters">
         <h1>Quel horror héros seras-tu ?</h1>
@@ -34,9 +38,11 @@ export default class HomeCharacter extends React.Component {
 
         <div className="HomeCharacters-card">
           {this.state.heroesAll.map((item, index) => (
-            <Character key={index} heroes={item} image="" />
+            <Character key={index} heroes={item} image="" ></Character>
+            
           ))}
         </div>
+        
       </div>
     );
   }
