@@ -30,7 +30,7 @@ export default class PersonList extends React.Component {
       }).catch(function (error) {
           console.log(error);
       });
-      }
+    }
     
       render() {
         return (
