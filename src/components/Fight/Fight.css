@@ -1,0 +1,24 @@
+.fightZone{
+color: white;
+font-size: 4em;
+font-family: "IM Fell DW Pica";
+}
+
+
+.fightZone-poing{
+    height: 40px;
+    width: 40px;
+}
+.fightZone-defense{
+    display: flex;
+    justify-content: center;
+    font-size:2em ;
+    font-family: "IM Fell DW Pica";
+    color : white;
+    height: 100px;
+    
+}
+
+.fightZone-btn{
+    padding: 6px;
+}
