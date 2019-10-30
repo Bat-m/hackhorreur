@@ -42,9 +42,12 @@ export default class Character extends React.Component {
           <p className="characters-card-id">Description : {this.props.heroes.description}</p>
           <p className="characters-card-id">Origine : {this.props.heroes.origin}</p>
           </div>
-          <button onClick={this.onButton}>Reset localstorage</button>
+          {/* <button onClick={this.onButton}>Reset localstorage</button> */}
           {/* <button onClick={this.onChange}>test localStorage</button> */}
-          <Link to='/stories' className="">Je veux toi</Link>
+
+          <br></br>
+          <Link to='/stories' onClick={this.onChange} className="character-btn-play">Jouer avec {this.props.heroes.name}</Link>
+
 
         </div>
       </div>
