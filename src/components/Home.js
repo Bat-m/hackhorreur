@@ -8,18 +8,19 @@ export default class Home extends React.Component{
         return (
             
           <div className="home">
-              <div >
+             
                   <div className="home-title-and-button">
-                      <div > 
-                        <h1>SAINT GROOL STORIE</h1>
+                  <div class="halloween">
+                      <div className="home-st-grool"> 
+                        <h1 className="home-st-grool-title">SAINT GROOL STORIE</h1>
                     </div>
-                    <div>
-                        <Link to='/charac' className="home-play-button">PLAY</Link>
+                    <div className="home-play">
+                        <Link to='/charac' className="home-play-button">PLAY !</Link>
                     </div>
                   </div>
             </div>
-            
           </div>
+          
         )
       }
     
