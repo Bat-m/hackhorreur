@@ -14,7 +14,7 @@ export default class Home extends React.Component{
                         <h1>SAINT GROOL STORIE</h1>
                     </div>
                     <div>
-                        <Link to='/charac'>PLAY</Link>
+                        <Link to='/charac' className="home-play-button">PLAY</Link>
                     </div>
                   </div>
             </div>
