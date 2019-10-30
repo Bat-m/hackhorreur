@@ -11,7 +11,7 @@ export default class HomeCharacter extends React.Component {
     
     this.state = {
       heroesAll: [],
-      
+      index:[1,2,3,4]
     };
     
   }
@@ -27,7 +27,7 @@ export default class HomeCharacter extends React.Component {
   }
 
   render() {
- 
+// console.log(this.state.heroesAll)
     return (
       <div className="HomeCharacters">
         <h1 className="HomeCharacters-title">Quel horror héros seras-tu ?</h1>
@@ -37,8 +37,8 @@ export default class HomeCharacter extends React.Component {
           Tu as réussi à monter dans une capsule partant vers un autre monde ... Tu attéris sur une nouvelle planète mais tu ne sais pas si elle est habitée!</p>
 
         <div className="HomeCharacters-card">
-          {this.state.heroesAll.map((item, index) => (
-            <Character key={index} heroes={item} image="" ></Character>
+          {this.state.heroesAll.map((item, i) => (
+             <Character heroes={item}  key={i} index={this.state.index[i]}  ></Character>
             
           ))}
         </div>
