@@ -12,15 +12,17 @@ export default class Character extends React.Component {
     };
     
   }
+  
+  
 
-  onChange = event => {
-    const test=this.props.heroes
-    localStorage.setItem('myValueInLocalStorage', JSON.stringify(test));
-  };
+  // onChange = event => {
+  //   const test=this.props.heroes
+  //   localStorage.setItem('myValueInLocalStorage', JSON.stringify(test));
+  // };
 
-  onButton = () => {
-    localStorage.clear();
-  };
+  // onButton = () => {
+  //   localStorage.clear();
+  // };
 
   render(){
     
@@ -42,7 +44,7 @@ export default class Character extends React.Component {
           </div>
           <button onClick={this.onButton}>Reset localstorage</button>
           {/* <button onClick={this.onChange}>test localStorage</button> */}
-          <Link to='/stories' onClick={this.onChange} className="">Je veux toi</Link>
+          <Link to='/stories' className="">Je veux toi</Link>
 
         </div>
       </div>
