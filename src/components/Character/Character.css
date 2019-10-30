@@ -1,20 +1,22 @@
-
 .characters-card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 100%;
-    /* background-color:beige; */
-    height: auto;
     border: 1px solid #ffe300;
     border-radius:2%;
-    background-color: black;
-    color:white;
+    font-size: 2.5vh;
+    height:78vh;
+    background-image: url("./../../assets/spaceBackground.jpg");
   }
 
+  .characters-card-id{
+    padding: 0;
+    margin: 3px;
+  }
  
   .characters-card >img{
-    width: 50%;
-    height: auto
+    width: 26vh;
+    height: 26vh;
+    padding-top: 5vh;
   }
   
   .characters-card:hover {

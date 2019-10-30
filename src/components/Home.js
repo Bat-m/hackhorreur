@@ -1,5 +1,4 @@
 import React from 'react';
-import spaceBackground from './../../src/assets/spaceBackground.jpg';
 import {Link} from 'react-router-dom';
 import './home.css'
 
