@@ -22,6 +22,8 @@
 h1{
     font-family: "IM Fell DW Pica";
     color : white;
-    
+    font-size: 10vh;
 }
-
+.home-play-button{
+    background-color: green;
+}
