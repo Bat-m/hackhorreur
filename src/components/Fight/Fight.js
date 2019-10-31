@@ -13,7 +13,11 @@ export default class Fight extends React.Component {
     super(props);
     this.state = {
       hero: [],
-      monster: []
+      monster: [],
+      lifeMonster:0,
+      lifeHero:0,
+      valueAtkMonster:0,
+      valueAtkHero:0,
     };
   }
 
@@ -40,17 +44,25 @@ export default class Fight extends React.Component {
   }
 
 
-  onFight=()=>{
-
-    let lifeMonster=this.state.monster.HP-this.state.hero.HP
-    let lifeHero=this.state.hero.HP-this.state.monster.HP
-    console.log(lifeMonster)
-    Axios.put(`${process.env.REACT_APP_RICHARD_IP}/monster/editMonster/1`,{"HP" : {lifeMonster}, "is_in_fight":1})
-    Axios.put(`${process.env.REACT_APP_RICHARD_IP}/characters/editCharacter/1`,{"HP" : {lifeHero}, "isHero" : 1})
+  onFightMonster=()=>{
+   
+    
+    this.setState({ valueAtkMonster: Math.floor(Math.random() * Math.floor(this.state.hero.atk+5)) });
+    this.setState({ lifeMonster: this.state.monster.HP- this.state.valueAtkMonster });
+    console.log("vie restante du montre" +this.state.valueAtkMonster)
+    Axios.put(`${process.env.REACT_APP_RICHARD_IP}/monster/editMonster/1`,{"HP" : this.state.lifeMonster, "is_in_fight":1})
 
     setTimeout(this.onUpdate, 500)
-      
+    setTimeout(this.onFightHero, 1000)  
   }
+
+  onFightHero=()=>{
+    this.setState({ valueAtkHero: Math.floor(Math.random() * Math.floor(this.state.monster.atk+5)) });
+    this.setState({ lifeHero: this.state.monster.HP- this.state.valueAtkHero });
+    Axios.put(`${process.env.REACT_APP_RICHARD_IP}/characters/editCharacter/1`,{"HP" : this.state.lifeHero, "isHero" : 1})
+    setTimeout(this.onUpdate, 500)
+  }
+
 
   render() {
  
@@ -168,7 +180,7 @@ export default class Fight extends React.Component {
           }}
         />
         <div className="test">
-          <h1 className="fightZone">FIGTH ZONE</h1>
+          <h1 className="fightZone">FIGHT ZONE</h1>
 
           <div className="fightZone-container">
             <div className="fightZone-hero-card">
@@ -197,7 +209,7 @@ export default class Fight extends React.Component {
             <div className="fightZone-button-card">
               <div className="fightZone-defense-container">
                 <div className="fightZone-defense item1">
-                  <div className="fightZone-btn" onClick={this.onFight}>Attaquer</div>
+                  <div className="fightZone-btn" onClick={this.onFightMonster}>Attaquer</div>
                   <img
                     className="fightZone-poing"
                     src={poing}
@@ -223,7 +235,8 @@ export default class Fight extends React.Component {
                 ></img>
               </div>
               <div className="fightZone-defense item4">
-                <div className="fightZone-text">text avec score qui bouge</div>
+                <p className="fightZone-text">Vous infligez {this.state.valueAtkMonster} dégats à {this.state.monster.name} ! </p>
+                <p className="fightZone-text"> {this.state.monster.name} vous inflige {this.state.valueAtkHero} dégats ! </p>
                 
               </div>
             </div>
