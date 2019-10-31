@@ -1,4 +1,46 @@
+/*****star background*****/
+
+.test {
+
+	bottom: 0;
+	content: " ";
+	left: 0;
+	right: 0;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+  }
+  canvas{
+	  height:100vh !important;
+  }
+
 h1{
     color:white;
     margin-top: 0px;
+}
+
+/*******/
+.stories-title {
+    font-size : 5em;
+}
+.stories-cave{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stories-image{
+    height: 300px;
+    width: 300px;
+}
+
+.stories-card{
+    display: flex;
+    justify-content: space-around;
+}
+
+.stories-choice{
+    text-decoration: none;
+    font-size: 3em;
+    color:white;
 }
