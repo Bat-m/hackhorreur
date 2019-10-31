@@ -13,7 +13,11 @@ export default class Fight extends React.Component {
     super(props);
     this.state = {
       hero: [],
-      monster: []
+      monster: [],
+      lifeMonster:0,
+      lifeHero:0,
+      valueAtkMonster:0,
+      valueAtkHero:0,
     };
   }
 
@@ -40,17 +44,24 @@ export default class Fight extends React.Component {
   }
 
 
-  onFight=()=>{
-
-    let lifeMonster=this.state.monster.HP-this.state.hero.HP
-    let lifeHero=this.state.hero.HP-this.state.monster.HP
-    console.log(lifeMonster)
-    Axios.put(`${process.env.REACT_APP_RICHARD_IP}/monster/editMonster/1`,{"HP" : {lifeMonster}, "is_in_fight":1})
-    Axios.put(`${process.env.REACT_APP_RICHARD_IP}/characters/editCharacter/1`,{"HP" : {lifeHero}, "isHero" : 1})
+  onFightMonster=()=>{
+   
+    this.valueAtkMonster= Math.floor(Math.random() * Math.floor(this.state.hero.atk+5));
+    this.lifeMonster= this.state.monster.HP- this.valueAtkMonster;
+    console.log("vie restante du montre" +this.state.valueAtkMonster)
+    Axios.put(`${process.env.REACT_APP_RICHARD_IP}/monster/editMonster/1`,{"HP" : this.lifeMonster, "is_in_fight":1})
 
     setTimeout(this.onUpdate, 500)
-      
+    setTimeout(this.onFightHero, 1000)  
   }
+
+  onFightHero=()=>{
+    this.valueAtkHero= Math.floor(Math.random() * Math.floor(this.state.monster.atk+5));
+    this.lifeHero= this.state.monster.HP- this.valueAtkHero ;
+    Axios.put(`${process.env.REACT_APP_RICHARD_IP}/characters/editCharacter/1`,{"HP" : this.lifeHero, "isHero" : 1})
+    setTimeout(this.onUpdate, 500)
+  }
+
 
   render() {
  
@@ -168,7 +179,7 @@ export default class Fight extends React.Component {
           }}
         />
         <div className="test">
-          <h1 className="fightZone">FIGTH ZONE</h1>
+          <h1 className="fightZone">FIGHT ZONE</h1>
 
           <div className="fightZone-container">
             <div className="fightZone-hero-card">
@@ -197,33 +208,37 @@ export default class Fight extends React.Component {
             <div className="fightZone-button-card">
               <div className="fightZone-defense-container">
                 <div className="fightZone-defense item1">
-                  <div className="fightZone-btn" onClick={this.onFight}>Attaquer</div>
-                  <img
+
+                  <div className="stories-choice1 glow-on-hover" onClick={this.onFightMonster}>Attaquer</div>
+                  {/* <img
                     className="fightZone-poing"
                     src={poing}
                     alt="poing"
-                  ></img>
+                  ></img> */}
                 </div>
               </div>
 
               <div className="fightZone-defense item2">
-                <div className="fightZone-btn" >Défendre</div>
-                <img
+                <div className="stories-choice1 glow-on-hover" >Défendre</div>
+                {/* <img
                   className="fightZone-poing"
                   src={bouclier}
                   alt="bouclier"
-                ></img>
+                ></img> */}
               </div>
               <div className="fightZone-defense item3">
-                <div className="fightZone-btn">Fuir</div>
-                <img
+                <div className="stories-choice1 glow-on-hover">Fuir</div>
+                {/* <img
                   className="fightZone-poing"
                   src={empreinte}
                   alt="empreinte"
-                ></img>
+                ></img> */}
               </div>
               <div className="fightZone-defense item4">
-                <div className="fightZone-text">text avec score qui bouge</div>
+
+                <p className="fightZone-text">Vous infligez {this.valueAtkMonster} dégats à {this.state.monster.name} ! </p>
+                <p className="fightZone-text"> {this.state.monster.name} vous inflige {this.valueAtkHero} dégats ! </p>
+
                 
               </div>
             </div>

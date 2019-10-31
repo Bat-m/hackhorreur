@@ -1,4 +1,60 @@
-h1{
-    color:white;
-    margin-top: 0px;
+/*****star background*****/
+
+.test {
+  bottom: 0;
+  content: " ";
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+canvas {
+  height: 100vh !important;
+}
+
+h1 {
+  color: white;
+  margin-top: 0px;
+}
+
+/*******/
+.stories-title {
+  font-size: 5em;
+}
+.stories-cave {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stories-image-one,.stories-image-two {
+  height: 300px;
+  width: 300px;
+  -webkit-filter: grayscale(0) blur(0px);
+  filter: grayscale(0) blur(0px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.stories-image-one:hover,.stories-image-two:hover {
+  /* width:350px;
+    height:350px; */
+  border-radius: 50%; /* on arrondit l'image */
+  -webkit-transform: rotate(360deg); /* rotation de l'image */
+  transform: rotate(360deg);
+}
+
+.stories-card {
+  display: flex;
+  justify-content: space-around;
+}
+
+/**** animation boutons***/
+.stories-discover {
+  text-decoration: none;
+  font-size: 3em;
+  color: white;
+  margin-top: 30px;
+  width: auto;
 }
