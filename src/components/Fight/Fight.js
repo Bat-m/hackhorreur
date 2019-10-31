@@ -46,7 +46,7 @@ export default class Fight extends React.Component {
 
   onFightMonster=()=>{
    
-    this.valueAtkMonster= Math.floor(Math.random() * Math.floor(this.state.hero.atk+5));
+    this.valueAtkMonster= Math.floor(Math.random() * Math.floor(this.state.hero.atk+2));
     this.lifeMonster= this.state.monster.HP- this.valueAtkMonster;
     console.log("vie restante du montre" +this.state.valueAtkMonster)
     Axios.put(`${process.env.REACT_APP_RICHARD_IP}/monster/editMonster/1`,{"HP" : this.lifeMonster, "is_in_fight":1})
@@ -56,15 +56,15 @@ export default class Fight extends React.Component {
   }
 
   onFightHero=()=>{
-    this.valueAtkHero= Math.floor(Math.random() * Math.floor(this.state.monster.atk+5));
-    this.lifeHero= this.state.monster.HP- this.valueAtkHero ;
+    this.valueAtkHero= Math.floor(Math.random() * Math.floor(this.state.monster.atk+2));
+    this.lifeHero= this.state.hero.HP- this.valueAtkHero ;
     Axios.put(`${process.env.REACT_APP_RICHARD_IP}/characters/editCharacter/1`,{"HP" : this.lifeHero, "isHero" : 1})
     setTimeout(this.onUpdate, 500)
   }
 
 
   render() {
- 
+ console.log(this.valueAtkMonster)
     return (
       <div>
         <Particles
@@ -236,8 +236,8 @@ export default class Fight extends React.Component {
               </div>
               <div className="fightZone-defense item4">
 
-                <p className="fightZone-text">Vous infligez {this.valueAtkMonster} dégats à {this.state.monster.name} ! </p>
-                <p className="fightZone-text"> {this.state.monster.name} vous inflige {this.valueAtkHero} dégats ! </p>
+                <p className="fightZone-text">Vous infligez {this.valueAtkMonster===undefined?'0':this.valueAtkMonster} dégats à {this.state.monster.name} ! </p>
+                <p className="fightZone-text"> {this.state.monster.name} vous inflige {this.valueAtkHero===undefined?'0':this.valueAtkHero} dégats ! </p>
 
                 
               </div>
@@ -269,6 +269,8 @@ export default class Fight extends React.Component {
               </div>
             </div>
           </div>
+          {this.state.hero.HP>-1&&this.state.hero.HP<=0&&alert('You are dead')}
+          {this.state.monster.HP>-1&&this.state.monster.HP<=0&&alert('Monster is dead')}
         </div>
       </div>
     );

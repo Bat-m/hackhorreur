@@ -9,7 +9,7 @@ export default class Home extends React.Component {
         <div className="home-title-and-button">
           <div class="halloween">
             <div className="home-st-grool">
-              <h1 className="home-st-grool-title">SPACE AROUND STORIE</h1>
+              <h1 className="home-st-grool-title">SPACE HORROR STORIES</h1>
             </div>
             <div className="home-play">
               <Link to="/charac" className="home-play-button">
