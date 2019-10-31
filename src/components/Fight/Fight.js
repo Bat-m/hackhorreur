@@ -10,6 +10,7 @@ export default class Fight extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+
       hero: [],
       monster: []
     };
@@ -37,6 +38,7 @@ export default class Fight extends React.Component {
     return (
       <div>
         <h1 className="fightZone">FIGTH ZONE</h1>
+
      
 
         <div className="fightZone-container">
