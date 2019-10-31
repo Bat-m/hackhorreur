@@ -155,13 +155,13 @@ export default class Stories extends React.Component {
                 {/* <button onClick={this.onChange}>test localStorage</button> */}
                 <div className="stories-card">
                 <div className="stories-cave">
-                <img className="stories-image" src={grotte} alt="grotte"></img>
-                <Link  to='/fight'  className="stories-choice">Découvre les environs</Link>  
+                <img className="stories-image-one" src={grotte} alt="grotte"></img>
+                <Link  to='/fight'  className="glow-on-hover stories-discover">Découvre les environs</Link>  
                 </div> 
 
                 <div className="stories-cave">
-                <img className="stories-image" src={paysage} alt="paysage"></img>
-                <Link  to='/stories'  className="stories-choice">Rencontre la faune locale</Link> 
+                <img className="stories-image-two" src={paysage} alt="paysage"></img>
+                <Link  to='/stories'  className="glow-on-hover stories-discover">Rencontre la faune locale</Link> 
                 </div>
                 </div>
             </div>

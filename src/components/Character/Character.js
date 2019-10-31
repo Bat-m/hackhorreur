@@ -49,7 +49,7 @@ export default class Character extends React.Component {
           </div>
 
           <br></br>
-          <Link className="characters-cards-players"
+          <Link className="glow-on-hover"
             to="/stories"
             onClick={this.onChange}
             // className="character-btn-play"
