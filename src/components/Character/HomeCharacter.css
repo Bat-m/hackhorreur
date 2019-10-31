@@ -1,21 +1,36 @@
-.HomeCharacters-card{
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: stretch;
-	
-	
-  }
-.HomeCharacters{
-  font-family: "IM Fell DW Pica";
-  color : white;
-}
-.HomeCharacters-storie{
-	font-size:2em;
+.HomeCharacters-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
 }
 
-.HomeCharacters-title{
-	font-size: 3em;
+.HomeCharacters {
+  font-family: "IM Fell DW Pica";
+  color: white;
+  height: 100vh;
+
 }
+.HomeCharacters-storie {
+  font-size: 2em;
+}
+
+.HomeCharacters-title {
+  font-size: 3em;
+}
+
+.test {
+
+	bottom: 0;
+	content: " ";
+	left: 0;
+	right: 0;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+  }
+  canvas{
+	  height:100vh !important;
+  }
