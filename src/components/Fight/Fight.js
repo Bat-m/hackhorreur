@@ -197,7 +197,7 @@ export default class Fight extends React.Component {
             <div className="fightZone-button-card">
               <div className="fightZone-defense-container">
                 <div className="fightZone-defense item1">
-                  <div className="fightZone-btn" onClick={this.onFight}>Attaquer</div>
+                  <div className="stories-choice1" onClick={this.onFight}>Attaquer</div>
                   <img
                     className="fightZone-poing"
                     src={poing}
@@ -207,7 +207,7 @@ export default class Fight extends React.Component {
               </div>
 
               <div className="fightZone-defense item2">
-                <div className="fightZone-btn" >Défendre</div>
+                <div className="stories-choice1" >Défendre</div>
                 <img
                   className="fightZone-poing"
                   src={bouclier}
@@ -215,7 +215,7 @@ export default class Fight extends React.Component {
                 ></img>
               </div>
               <div className="fightZone-defense item3">
-                <div className="fightZone-btn">Fuir</div>
+                <div className="stories-choice1">Fuir</div>
                 <img
                   className="fightZone-poing"
                   src={empreinte}
@@ -223,7 +223,7 @@ export default class Fight extends React.Component {
                 ></img>
               </div>
               <div className="fightZone-defense item4">
-                <div className="fightZone-text">text avec score qui bouge</div>
+                <div className="fightZone-text1">text avec score qui bouge</div>
                 
               </div>
             </div>
