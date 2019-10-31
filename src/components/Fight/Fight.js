@@ -269,8 +269,8 @@ export default class Fight extends React.Component {
               </div>
             </div>
           </div>
-          {this.state.hero.HP>-1&&this.state.hero.HP<=0&&alert('You are dead')}
-          {this.state.monster.HP>-1&&this.state.monster.HP<=0&&alert('Monster is dead')}
+          {this.state.hero.HP<=0&&alert('You are dead')}
+          {this.state.monster.HP<=0&&alert('Monster is dead')}
         </div>
       </div>
     );
